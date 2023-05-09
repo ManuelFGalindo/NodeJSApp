@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="4" failures="0" errors="0" time="3.82">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-05-09T23:17:15" time="2.281" tests="1">
+    <testcase classname=" Item model should have correct schema" name=" Item model should have correct schema" time="0.024">
+    </testcase>
+  </testsuite>
+  <testsuite name="GET /" errors="0" failures="0" skipped="0" timestamp="2023-05-09T23:17:15" time="2.916" tests="1">
+    <testcase classname="GET / should render the index view with form and posts" name="GET / should render the index view with form and posts" time="0.098">
+    </testcase>
+  </testsuite>
+  <testsuite name="App routes" errors="0" failures="0" skipped="0" timestamp="2023-05-09T23:17:15" time="2.978" tests="2">
+    <testcase classname="App routes GET / should render the index view with items" name="App routes GET / should render the index view with items" time="0.085">
+    </testcase>
+    <testcase classname="App routes POST /item/add should add a new item and redirect" name="App routes POST /item/add should add a new item and redirect" time="0.01">
+    </testcase>
+  </testsuite>
+</testsuites>
