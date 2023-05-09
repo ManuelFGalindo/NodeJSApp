@@ -1,8 +1,14 @@
 @Library('NodeJSApp_Library@feature') _
 
 node {
-    def sharedJenkinsfile = load 'Jenkinsfile'
-    //sharedJenkinsfile.call()
-    hello()
+    // Clonar el repositorio devops
+    dir('devops') {
+        git credentialsId: 'token_github', url:'https://github.com/JulianMolina99/devops.git'
+    }
 
+    // Cargar el Jenkinsfile del repositorio devops
+    def sharedJenkinsfile = load 'devops/Jenkinsfile'
+    sharedJenkinsfile.call()
+
+    hello()
 }
