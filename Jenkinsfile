@@ -1,8 +1,9 @@
 @Library('NodeJSApp_Library@feature') _
 
 node {
-    def sharedJenkinsfile = load 'Jenkinsfile'
+    //def sharedJenkinsfile = load 'Jenkinsfile'
     //sharedJenkinsfile.call()
-    echo 'Hello'
+    //echo 'Hello'
+    hello()
 
 }
