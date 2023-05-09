@@ -2,7 +2,7 @@
 
 node {
     // Cargar el Jenkinsfile del repositorio devops
-    def sharedJenkinsfile = libraryResource 'devops/Jenkinsfile'
+    def sharedJenkinsfile = libraryResource 'Jenkinsfile'
     load(sharedJenkinsfile).call()
 
     hello()
