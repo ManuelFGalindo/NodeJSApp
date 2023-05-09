@@ -1,9 +1,5 @@
-@Library('NodeJSApp_Library@feature') _
-
-node {
-    // Cargar el Jenkinsfile del repositorio devops
-    def sharedJenkinsfile = libraryResource 'Jenkinsfile'
-    load(sharedJenkinsfile).call()
-
-    hello()
+def jenkinsFile
+stage ('Loading Jenkinsfile') {
+    jenkinsFile = fileLoader.fromGit ('Jenkinsfile', 'https://github.com/JulianMolina99/devops.git', 'feature', null, '')
 }
+jenkinsFile.start ()
