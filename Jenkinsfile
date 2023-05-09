@@ -1,17 +1,4 @@
-/*
-@Library('pipeline_nodejs_app@feature') _
+@Library('NodeJSApp_Library') _
 
-pipeline_function(scmUrl: 'https://github.com/JulianMolina99/nodejs_application.git')
-*/
-
-pipeline {
-    agent any
-
-    stages {
-        stage ('Test Hello') {
-            steps {
-                echo 'Test Hello from Jenkinsfile in feature branch'
-            }
-        }
-    }
-}
+def sharedJenkinsfile = load 'Jenkinsfile'
+sharedJenkinsfile.call()
