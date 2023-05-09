@@ -24,6 +24,13 @@ pipeline {
             }
         }
         
+        stage('Build artifact') {
+            steps {
+                sh 'tar -czvf nodejs_app.tar.gz dist'
+                archiveArtifacts artifacts: 'nodejs_app.tar.gz', fingerprint: true
+            }
+        }
+        
         stage('Analisys with sonar') {
             steps {
                 script{
