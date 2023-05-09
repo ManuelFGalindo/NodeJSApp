@@ -3,7 +3,7 @@
 node {
     // Clonar el repositorio devops
     dir('devops') {
-        git credentialsId: 'token_github', url:'https://github.com/JulianMolina99/devops.git'
+        git branch: 'feature', credentialsId: 'token_github', url:'https://github.com/JulianMolina99/devops.git'
     }
 
     // Cargar el Jenkinsfile del repositorio devops
