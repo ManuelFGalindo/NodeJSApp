@@ -39,15 +39,19 @@ app.post('/item/add', (req, res) => {
 
 const port = 3000
 
-/**** ESTA LINEA SE COMENTA PARA VER EL SERVIDOR EN EJECUCION Y SE DESCOMENTA PARA PRUEBAS *****/
+/**** ESTA LINEA SE COMENTA PARA VER EL SERVIDOR EN EJECUCION Y SE DESCOMENTA PARA PRUEBAS 
 
 module.exports = app; // Exporta la instancia de la aplicación Express
+
+
+*****/
 
 /******* 
 
 ESTA LINEA SE COMENTA PARA PRUEBAS
 PERO SE DESCOMENTA PARA VER LA APLICACION EN EJECUCION 
 
-app.listen(port, () => console.log('I will not run', port));
 
 ******/ 
+
+app.listen(port, () => console.log('I will not run', port));
