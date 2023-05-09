@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Checkout') {
             steps {
-                git url: 'https://github.com/JulianMolina99/nodejs_application.git'
+                git credentialsId: 'token_github', url: 'https://github.com/JulianMolina99/nodejs_application.git'
             }
         }
         
