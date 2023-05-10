@@ -1,20 +1,12 @@
 version: '3'
-
-services: 
-  app:
+services:
+  web:
     build: .
     ports:
       - "3000:3000"
-    volumes: 
-      - myvolume99:/usr/src/app
-        
-    restart: always
-    links: 
+    depends_on:
       - mongo
   mongo:
     image: mongo
-    ports: 
+    ports:
       - "27017:27017"
-
-volumes: 
-  myvolume99:
