@@ -1,3 +1,3 @@
 @Library('devops@master') _
-//pipelineNodeJs()
-hello()
+pipelineNodeJs()
+//hello()
