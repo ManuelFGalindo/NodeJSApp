@@ -16,7 +16,7 @@ mongoose.connect('mongodb://mongo:27017/app', {
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
-  const Item = require('../src/models/Item');
+const Item = require('../src/models/Item');
 
 app.get('/', (req, res) => {
   console.log("hit home route");
@@ -37,18 +37,4 @@ app.post('/item/add', (req, res) => {
   newItem.save().then(item => res.redirect('/'));
 });
 
-const port = 3000
-
-/**** ESTA LINEA SE COMENTA PARA VER EL SERVIDOR EN EJECUCION Y SE DESCOMENTA PARA PRUEBAS 
-
-*****/
 module.exports = app; // Exporta la instancia de la aplicación Express
-
-/******* 
-
-ESTA LINEA SE COMENTA PARA PRUEBAS
-PERO SE DESCOMENTA PARA VER LA APLICACION EN EJECUCION 
-
-
-******/ 
-

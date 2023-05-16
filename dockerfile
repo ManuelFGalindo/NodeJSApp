@@ -16,5 +16,5 @@ COPY . .
 # Make port 3000 available outside of the container
 EXPOSE 3000
 
-# Run index.js when the container launches
-CMD ["node", "src/index.js"]
+# Run server.js when the container launches
+CMD ["node", "src/server.js"]
