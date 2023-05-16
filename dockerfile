@@ -1,13 +1,20 @@
-FROM node:lts
+# Use an official Node.js runtime as the parent image
+FROM node:18.16.0
 
-WORKDIR /usr/src/
+# Set the working directory in the container to /app
+WORKDIR /app
 
-COPY package.json ./
+# Copy the package.json file from your local machine to the container
+COPY package*.json ./
 
+# Install any dependencies
 RUN npm install
 
+# Copy the rest of your app's source code from your local machine to the container
 COPY . .
 
+# Make port 3000 available outside of the container
 EXPOSE 3000
 
-CMD ["npm", "start"]
+# Run index.js when the container launches
+CMD ["node", "src/index.js"]

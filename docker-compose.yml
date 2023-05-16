@@ -1,20 +1,19 @@
 version: '3'
-
-services: 
-  app:
+services:
+  web:
     build: .
     ports:
       - "3000:3000"
-    volumes: 
-      - myvolume99:/usr/src/
-        
-    restart: always
-    links: 
+    depends_on:
       - mongo
+    networks:
+      - network_nodejs_app
   mongo:
     image: mongo
-    ports: 
+    ports:
       - "27017:27017"
+    networks:
+      - network_nodejs_app
 
-volumes: 
-  myvolume99:
+networks:
+  network_nodejs_app:

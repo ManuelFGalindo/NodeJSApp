@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/home/julianmolina/Documents/Periferia-it/Reto jenkins/Primera fase/nodejs_app/src/__test__/item.test.js">
+    <testCase name="Item model should have correct schema" duration="7"/>
+  </file>
+  <file path="/home/julianmolina/Documents/Periferia-it/Reto jenkins/Primera fase/nodejs_app/src/__test__/views_index.test.js">
+    <testCase name="GET / should render the index view with form and posts" duration="34"/>
+  </file>
+  <file path="/home/julianmolina/Documents/Periferia-it/Reto jenkins/Primera fase/nodejs_app/src/__test__/index.test.js">
+    <testCase name="App routes GET / should render the index view with items" duration="32"/>
+    <testCase name="App routes POST /item/add should add a new item and redirect" duration="8"/>
+  </file>
+</testExecutions>
