@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: nodejs_app:${BUILD_ID}
+    image: julianmol007/nodejs_app:${BUILD_ID}
     ports:
       - "3000:3000"
     depends_on:
