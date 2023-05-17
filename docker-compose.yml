@@ -8,14 +8,14 @@ services:
     depends_on:
       - mongo
     networks:
-      - network_nodejs_app_${BUILD_ID}
+      - network_nodejs_app
   mongo:
     image: mongo
     container_name: mongo_db
     ports:
       - "27017:27017"
     networks:
-      - network_nodejs_app_${BUILD_ID}
+      - network_nodejs_app
 
 networks:
-  network_nodejs_app_${BUILD_ID}:
+  network_nodejs_app:
