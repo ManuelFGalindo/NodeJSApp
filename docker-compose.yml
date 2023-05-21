@@ -1,15 +1,17 @@
 version: '3'
 services:
   web:
-    build: .
+    image: julianmol007/${repoName}_nodejs_app:${BUILD_ID}
+    container_name: nodejs_app
     ports:
-      - "3000:3000"
+      - "3001:3001"
     depends_on:
       - mongo
     networks:
       - network_nodejs_app
   mongo:
     image: mongo
+    container_name: mongo_db
     ports:
       - "27017:27017"
     networks:
