@@ -49,7 +49,7 @@ La estructura de carpetas de esta aplicación se explica a continuación:
 | **src**/index.js         | Configura y define las rutas de la aplicación Express. También establece la conexión con MongoDB.|
 | **src**/server.js        | Punto de entrada de la aplicación. Inicia el servidor y escucha en el puerto especificado.  |
 | .gitignore               | Especifica los archivos y directorios que Git debe ignorar al realizar un commit.  |
-| Jenkinsfile              | Define el pipeline de CI/CD de la aplicación para Jenkins. |
+| Jenkinsfile              | Este Jenkinsfile invoca una funcion de librerias compartidas de Jenkins que realiza el pipeline de CI/CD de la aplicacion. |
 | docker-compose.yml       | Define los servicios, redes y volúmenes de la aplicación para Docker Compose. |
 | dockerfile               | Define los pasos para construir la imagen Docker de la aplicación.   |
 | package-lock.json        | Mantiene un registro exacto de las dependencias y versiones instaladas por npm en el momento de su creación. |   
