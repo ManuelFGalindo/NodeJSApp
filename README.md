@@ -129,7 +129,7 @@ La ejecución de las pruebas con npm run test también generará un informe de c
 
 ### Autores
 
-- Julian Steven Molina Campos - NodeJSApp - JulianMolina99
+- Julian Steven Molina Campos - JulianMolina99
 
 ### Licencia
 Este proyecto está bajo la Licencia MIT - revisar el archivo LICENSE.md para mas detalles
