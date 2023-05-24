@@ -4,32 +4,38 @@ Este proyecto consiste en una aplicación de Node.js con mongoDB, esta aplicaci�
 
 # Pre-requisitos
 - Instalar [Node.js](https://nodejs.org/en/) version 18.16.0
-
+- Instalar Docker:
+  - [Docker](https://docs.docker.com/desktop/install/windows-install/) para Windows, en este caso tambien se instala la herramienta de docker compose
+  - [Docker](https://docs.docker.com/engine/install/ubuntu/) para Ubuntu
+  - [Docker compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04) para Ubuntu
+ 
 
 # Instalacion
-- Clone the repository
-```
-git clone  <git lab template url> <project_name>
-```
-- Install dependencies
-```
-cd <project_name>
-npm install
-```
-- Build and run the project
-```
-npm start
-```
-  Navigate to `http://localhost:8001`
 
-- API Document endpoints
+#### Instalacion local
 
-  swagger Spec Endpoint : http://localhost:8001/api-docs 
+Si se quiere instalar y ejecutar la aplicación localmente, sin necesidad de despliegue a través de Jenkins, se debe seguir estos pasos:
 
-  swagger-ui  Endpoint : http://localhost:8001/docs 
+1. Clonar el repositorio
+````
+git clone https://github.com/JulianMolina99/NodeJSApp.git
+````
 
+2. Navegar al directorio actual de la aplicacion.
+````
+cd "Install Application"
+````
 
-## Project Structure
+3. Construir y ejecutar el proyecto utilizando Docker Compose.
+````
+docker-compose up --build
+````
+4. Navegar a http://localhost:3001
+
+#### Despliegue en Jenkins
+Si se desea desplegar la aplicación mediante Jenkins, se debe utilizar los archivos Docker y Docker Compose que se encuentran en la raíz del proyecto. Estos están configurados para trabajar con las variables de entorno y otros aspectos específicos del pipeline en Jenkins.
+
+## Estructura del proyecto
 The folder structure of this app is explained below:
 
 | Name | Description |
@@ -47,31 +53,6 @@ The folder structure of this app is explained below:
 | package.json             | Contains npm dependencies as well as [build scripts](#what-if-a-library-isnt-on-definitelytyped)   | tsconfig.json            | Config settings for compiling source code only written in TypeScript    
 | tslint.json              | Config settings for TSLint code style checking                                                |
 
-## Building the project
-### Configuring TypeScript compilation
-```json
-{
-    "compilerOptions": {
-      "target": "es5",
-      "module": "commonjs",
-      "outDir": "dist",
-      "sourceMap": true
-    },
-    
-    "include": [
-      "src/**/*.ts"
-      
-
-    ],
-    "exclude": [
-      "src/**/*.spec.ts",
-      "test",
-      "node_modules"
-    
-    ]
-  }
-
-```
 
 ### Ejecutando el build de la aplicacion
 All the different build steps are orchestrated via [npm scripts](https://docs.npmjs.com/misc/scripts).
@@ -95,15 +76,11 @@ The tests are  written in Mocha and the assertions done using Chai
 ```
 
 ### Ejecucion de tests usando scripts de NPM
+
 ````
 npm run test
-
 ````
 Test files are created under test folder.
-
-
-
-### Despliegue
 
 
 ### Hecho con
