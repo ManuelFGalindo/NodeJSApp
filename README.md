@@ -57,6 +57,53 @@ La estructura de carpetas de esta aplicación se explica a continuación:
 | package.json | Define las dependencias del proyecto, los scripts de construcción y otros metadatos del proyecto. |
 | test-report.xml | Contiene el informe de las pruebas unitarias realizadas en el código fuente.
 
+
+```
+├── coverage
+│   ├── clover.xml
+│   ├── coverage-final.json
+│   ├── lcov.info
+│   └── lcov-report
+│       ├── base.css
+│       ├── block-navigation.js
+│       ├── favicon.png
+│       ├── index.html
+│       ├── prettify.css
+│       ├── prettify.js
+│       ├── sort-arrow-sprite.png
+│       ├── sorter.js
+│       └── src
+│           ├── index.html
+│           ├── index.js.html
+│           └── models
+│               ├── index.html
+│               └── Item.js.html
+├── dist
+│   ├── index.js
+│   └── index.js.map
+├── docker-compose.yml
+├── dockerfile
+├── Install Aplication
+│   ├── docker-compose.yml
+│   └── dockerfile
+├── Jenkinsfile
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── README.md
+├── src
+│   ├── index.js
+│   ├── models
+│   │   └── Item.js
+│   ├── server.js
+│   ├── __test__
+│   │   ├── index.test.js
+│   │   ├── item.test.js
+│   │   └── views_index.test.js
+│   └── views
+│       └── index.ejs
+└── test-report.xml
+```
 ### Scripts NPM
 
 Todos los diferentes pasos de construcción están orquestados mediante [scripts de npm](https://docs.npmjs.com/misc/scripts).
