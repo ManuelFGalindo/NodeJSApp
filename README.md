@@ -1,6 +1,6 @@
 # Aplicacion de NodeJS con mongoDB
 
-Este proyecto consiste en una aplicación de Node.js con mongoDB, esta aplicación se toma de un proyecto guiado de [Coursera](https://www.coursera.org/projects/containerize-full-stack-nodejs-application-in-docker). Básicamente es un blog simple que permite a los usuarios ingresar sus nombres y comentarios. Utiliza el marco de aplicación web Express, la base de datos MongoDB y el motor de plantillas EJS. 
+Este proyecto consiste en una aplicación de Node.js con mongoDB, esta aplicación se toma de un [proyecto guiado](https://www.coursera.org/projects/containerize-full-stack-nodejs-application-in-docker) de Coursera. Básicamente es un blog simple que permite a los usuarios ingresar sus nombres y comentarios. Utiliza el marco de aplicación web Express, la base de datos MongoDB y el motor de plantillas EJS. 
 
 # Pre-requisitos
 - Instalar [Node.js](https://nodejs.org/en/) version 18.16.0
