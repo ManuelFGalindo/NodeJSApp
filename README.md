@@ -117,15 +117,15 @@ La ejecución de las pruebas con npm run test también generará un informe de c
 
 ### Hecho con
 
-    Node.js - El entorno de ejecución para el backend de JavaScript.
-    npm - El manejador de dependencias utilizado para instalar y administrar las bibliotecas y herramientas necesarias.
-    Express - El framework de Node.js utilizado para crear la API y manejar las rutas y middleware de la aplicación.
-    Mongoose - Biblioteca de Node.js utilizada para la gestión de la base de datos MongoDB.
-    EJS - Motor de plantillas para generar vistas HTML dinámicas a partir de los datos de la aplicación.
-    Body-parser - Middleware utilizado para analizar las solicitudes entrantes en un formato que se puede utilizar con facilidad.
-    Jest - Framework de pruebas para JavaScript, utilizado para realizar pruebas unitarias y de integración en la aplicación.
-    Supertest - Biblioteca utilizada junto con Jest para probar las rutas y endpoints HTTP.
- - *Parcel* - Empaquetador de aplicaciones web rápido y sin configuración, utilizado para compilar y preparar la aplicación para producción.
+- [Node.js](https://nodejs.org/en/) - El entorno de ejecución para el backend de JavaScript.
+- [npm](https://www.npmjs.com/) - El manejador de dependencias utilizado para instalar y administrar las bibliotecas y herramientas necesarias.
+- [Express](https://expressjs.com/) - El framework de Node.js utilizado para crear la API y manejar las rutas y middleware de la aplicación.
+- [Mongoose](https://mongoosejs.com/) - Biblioteca de Node.js utilizada para la gestión de la base de datos MongoDB.
+- [EJS](https://ejs.co/) - Motor de plantillas para generar vistas HTML dinámicas a partir de los datos de la aplicación.
+- [Body-parser](https://www.npmjs.com/package/body-parser) - Middleware utilizado para analizar las solicitudes entrantes en un formato que se puede utilizar con facilidad.
+- [Jest](https://jestjs.io/) - Framework de pruebas para JavaScript, utilizado para realizar pruebas unitarias y de integración en la aplicación.
+- [Supertest](https://www.npmjs.com/package/supertest) - Biblioteca utilizada junto con Jest para probar las rutas y endpoints HTTP.
+- [Parcel](https://parceljs.org/) - Empaquetador de aplicaciones web rápido y sin configuración, utilizado para compilar y preparar la aplicación para producción.
 
 ### Autores
 
