@@ -1,6 +1,6 @@
 # Aplicacion de NodeJS con mongoDB
 
-Este proyecto consiste en una aplicación de Node.js con mongoDB, esta aplicación se toma de un [proyecto guiado](https://www.coursera.org/projects/containerize-full-stack-nodejs-application-in-docker) de Coursera. Básicamente es un blog simple que permite a los usuarios ingresar sus nombres y comentarios. Utiliza el marco de aplicación web Express, la base de datos MongoDB y el motor de plantillas EJS. 
+Este proyecto consiste en una aplicación de Node.js con mongoDB, esta aplicación se basa en un [proyecto guiado](https://www.coursera.org/projects/containerize-full-stack-nodejs-application-in-docker) de Coursera. Básicamente es un blog simple que permite a los usuarios ingresar sus nombres y comentarios. Utiliza el marco de aplicación web Express, la base de datos MongoDB y el motor de plantillas EJS. 
 
 # Pre-requisitos
 - Instalar [Node.js](https://nodejs.org/en/) version 18.16.0
@@ -79,29 +79,57 @@ Las dependencias de desarrollo son módulos que solo se requieren durante el des
 - **parcel-bundler**: Un empaquetador de aplicaciones web, muy útil para la construcción de proyectos JavaScript modernos.
 - **supertest**: Proporciona una abstracción de alto nivel para probar las API HTTP.
 
+## Compilación
 
-## Testing
-The tests are  written in Mocha and the assertions done using Chai
+La compilación de la aplicación está configurada para hacerse con [Parcel](https://parceljs.org/), un empaquetador de aplicaciones web.
 
 ```
-"mocha": "3.4.2",
-"chai": "4.1.2",
-"chai-http": "3.0.0",
+"parcel-bundler": "1.3.1"
+```
 
+### Compilación de la aplicación usando scripts de NPM
+
+La compilacion se realiza con el siguiente comando:
+
+```
+npm run build
+```
+Este comando generará una versión de producción de la aplicación en la carpeta dist del proyecto. Este directorio contendrá los archivos estáticos y el código JavaScript transpilado listo para ser desplegado en un servidor de producción.
+
+## Pruebas
+Las pruebas están escritas utilizando [Jest](https://jestjs.io/) y [supertest](https://www.npmjs.com/package/supertest).
+
+```
+"jest": "29.5.0",
+"supertest": "6.3.3"
 ```
 
 ### Ejecucion de tests usando scripts de NPM
 
+Las pruebas unitarias se pueden ejecutar con el siguiente comando:
 ````
 npm run test
 ````
-Test files are created under test folder.
+Los archivos de prueba se encuentran en la carpeta src/__test__.
+
+La ejecución de las pruebas con npm run test también generará un informe de cobertura de las pruebas y procesará los resultados de las pruebas con jest-sonar-reporter, lo que resultará en la creación de un archivo test-report.xml en la raíz del proyecto. Este archivo se puede utilizar para visualizar la cobertura de las pruebas y los resultados en herramientas compatibles como SonarQube.
 
 
 ### Hecho con
 
+    Node.js - El entorno de ejecución para el backend de JavaScript.
+    npm - El manejador de dependencias utilizado para instalar y administrar las bibliotecas y herramientas necesarias.
+    Express - El framework de Node.js utilizado para crear la API y manejar las rutas y middleware de la aplicación.
+    Mongoose - Biblioteca de Node.js utilizada para la gestión de la base de datos MongoDB.
+    EJS - Motor de plantillas para generar vistas HTML dinámicas a partir de los datos de la aplicación.
+    Body-parser - Middleware utilizado para analizar las solicitudes entrantes en un formato que se puede utilizar con facilidad.
+    Jest - Framework de pruebas para JavaScript, utilizado para realizar pruebas unitarias y de integración en la aplicación.
+    Supertest - Biblioteca utilizada junto con Jest para probar las rutas y endpoints HTTP.
+ - *Parcel* - Empaquetador de aplicaciones web rápido y sin configuración, utilizado para compilar y preparar la aplicación para producción.
 
 ### Autores
 
+- Julian Steven Molina Campos - NodeJSApp - JulianMolina99
 
 ### Licencia
+Este proyecto está bajo la Licencia MIT - revisar el archivo LICENSE.md para mas detalles
