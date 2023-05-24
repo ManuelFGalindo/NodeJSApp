@@ -40,6 +40,7 @@ La estructura de carpetas de esta aplicación se explica a continuación:
 
 | Nombre | Descripcion |
 | ------------------------ | --------------------------------------------------------------------------------------------- |
+| **Install Aplication**   | Contiene los archivos dockerfile y docker-compose para realizar la instalacion de la aplicacion de manera local sin necesidad del despliegue a traves de Jenkins  |
 | **coverage**             | Contiene el informe de cobertura de las pruebas del codigo fuente realizado por Jest.  |
 | **dist**                 | Contiene el distribuible (o salida) de la compilacion del codigo fuente con Parcel.   |
 | **src**                  | Contiene el codigo fuente de la aplicacion                               |
