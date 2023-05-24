@@ -43,7 +43,7 @@ La estructura de carpetas de esta aplicación se explica a continuación:
 | **coverage**             | Contiene el informe de cobertura de las pruebas del codigo fuente realizado por Jest.  |
 | **dist**                 | Contiene el distribuible (o salida) de la compilacion del codigo fuente con Parcel.   |
 | **src**                  | Contiene el codigo fuente de la aplicacion                               |
-| **src/__test__**         | Contiene los archivos para realizar pruebas unitarias del codigo fuente.      |                
+| **src/\_\_test\_\_**         | Contiene los archivos para realizar pruebas unitarias del codigo fuente.      |                
 | **src/models**           | Los modelos definen esquemas que se utilizarán para almacenar y recuperar datos de la base de datos de la aplicación.  |
 | **src/views**            | Contiene las plantillas de la aplicación que se renderizarán en el cliente, en este caso, la plantilla index.ejs. |
 | **src**/index.js         | Configura y define las rutas de la aplicación Express. También establece la conexión con MongoDB.|
