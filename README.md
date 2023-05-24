@@ -110,7 +110,7 @@ Las pruebas unitarias se pueden ejecutar con el siguiente comando:
 ````
 npm run test
 ````
-Los archivos de prueba se encuentran en la carpeta `src/\_\_test\_\_`.
+Los archivos de prueba se encuentran en la carpeta src/__test__.
 
 
 La ejecución de las pruebas con npm run test también generará un informe de cobertura de las pruebas y procesará los resultados de las pruebas con jest-sonar-reporter, lo que resultará en la creación de un archivo test-report.xml en la raíz del proyecto. Este archivo se puede utilizar para visualizar la cobertura de las pruebas y los resultados en herramientas compatibles como SonarQube.
