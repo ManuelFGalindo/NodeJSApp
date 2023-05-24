@@ -36,33 +36,48 @@ docker-compose up --build
 Si se desea desplegar la aplicación mediante Jenkins, se debe utilizar los archivos Docker y Docker Compose que se encuentran en la raíz del proyecto. Estos están configurados para trabajar con las variables de entorno y otros aspectos específicos del pipeline en Jenkins.
 
 ## Estructura del proyecto
-The folder structure of this app is explained below:
+La estructura de carpetas de esta aplicación se explica a continuación:
 
-| Name | Description |
+| Nombre | Descripcion |
 | ------------------------ | --------------------------------------------------------------------------------------------- |
-| **dist**                 | Contains the distributable (or output) from your TypeScript build.  |
-| **src**                  | Contains  source code that will be compiled to the dist dir                               |
-| **configuration**        | Application configuration including environment-specific configs 
-| **src/controllers**      | Controllers define functions to serve various express routes. 
-| **src/lib**              | Common libraries to be used across your app.  
-| **src/middlewares**      | Express middlewares which process the incoming requests before handling them down to the routes
-| **src/routes**           | Contain all express routes, separated by module/area of application                       
-| **src/models**           | Models define schemas that will be used in storing and retrieving data from Application database  |
-| **src/monitoring**      | Prometheus metrics |
-| **src**/index.ts         | Entry point to express app                                                               |
-| package.json             | Contains npm dependencies as well as [build scripts](#what-if-a-library-isnt-on-definitelytyped)   | tsconfig.json            | Config settings for compiling source code only written in TypeScript    
-| tslint.json              | Config settings for TSLint code style checking                                                |
+| **coverage**             | Contiene el informe de cobertura de las pruebas del codigo fuente realizado por Jest.  |
+| **dist**                 | Contiene el distribuible (o salida) de la compilacion del codigo fuente con Parcel.   |
+| **src**                  | Contiene el codigo fuente de la aplicacion                               |
+| **src/__test__**         | Contiene los archivos para realizar pruebas unitarias del codigo fuente.      |                
+| **src/models**           | Los modelos definen esquemas que se utilizarán para almacenar y recuperar datos de la base de datos de la aplicación.  |
+| **src/views**            | Contiene las plantillas de la aplicación que se renderizarán en el cliente, en este caso, la plantilla index.ejs. |
+| **src**/index.js         | Configura y define las rutas de la aplicación Express. También establece la conexión con MongoDB.|
+| **src**/server.js        | Punto de entrada de la aplicación. Inicia el servidor y escucha en el puerto especificado.  |
+| .gitignore               | Especifica los archivos y directorios que Git debe ignorar al realizar un commit.  |
+| Jenkinsfile              | Define el pipeline de CI/CD de la aplicación para Jenkins. |
+| docker-compose.yml       | Define los servicios, redes y volúmenes de la aplicación para Docker Compose. |
+| dockerfile               | Define los pasos para construir la imagen Docker de la aplicación.   |
+| package-lock.json        | Mantiene un registro exacto de las dependencias y versiones instaladas por npm en el momento de su creación. |   
+| package.json             | Define las dependencias del proyecto, los scripts de construcción y otros metadatos del proyecto. | 
+| test-report.xml          | Contiene el informe de las pruebas unitarias realizadas en el código fuente. |
 
+### Scripts NPM
 
-### Ejecutando el build de la aplicacion
-All the different build steps are orchestrated via [npm scripts](https://docs.npmjs.com/misc/scripts).
-Npm scripts basically allow us to call (and chain) terminal commands via npm.
+Todos los diferentes pasos de construcción están orquestados mediante [scripts de npm](https://docs.npmjs.com/misc/scripts).
+Los scripts de npm básicamente nos permiten llamar (y encadenar) comandos de terminal a través de npm.
 
-| Npm Script | Description |
+| Script de Npm | Descripción |
 | ------------------------- | ------------------------------------------------------------------------------------------------- |
-| `start`                   | Runs full build and runs node on dist/index.js. Can be invoked with `npm start`                  |
-| `build:copy`                   | copy the *.yaml file to dist/ folder      |
+| `start`                   | Ejecuta el archivo index.js de la carpeta src con Node.js. Se puede invocar con `npm start` |
+| `test`                     | Ejecuta las pruebas unitarias con Jest, genera un informe de cobertura y procesa los resultados de las pruebas con jest-sonar-reporter. Se puede invocar con `npm test` |
+| `build`                   | Construye la aplicación con Parcel, utilizando el archivo index.js de la carpeta src como entrada. Se puede invocar con `npm run build` |
 
+### Dependencias de desarrollo
+
+Las dependencias de desarrollo son módulos que solo se requieren durante el desarrollo de la aplicación, no cuando la aplicación ya está en producción. Estas son las dependencias de desarrollo de tu proyecto:
+
+- **browserify-zlib**: Proporciona una implementación de zlib para su uso con Browserify.
+- **chokidar**: Proporciona una interfaz de programación para observar los cambios en los archivos y directorios.
+- **jest**: Un marco de pruebas unitarias para JavaScript.
+- **jest-junit**: Un informe de JUnit para Jest, útil para integraciones de CI/CD.
+- **jest-sonar-reporter**: Genera informes de pruebas compatibles con SonarQube.
+- **parcel-bundler**: Un empaquetador de aplicaciones web, muy útil para la construcción de proyectos JavaScript modernos.
+- **supertest**: Proporciona una abstracción de alto nivel para probar las API HTTP.
 
 
 ## Testing
