@@ -1,27 +1,28 @@
-# Aplicacion de NodeJS con mongoDB
+# Aplicación de NodeJS con MongoDB
 
-Este proyecto consiste en una aplicación de Node.js con mongoDB, esta aplicación se basa en un [proyecto guiado](https://www.coursera.org/projects/containerize-full-stack-nodejs-application-in-docker) de Coursera. Básicamente es un blog simple que permite a los usuarios ingresar sus nombres y comentarios. Utiliza el marco de aplicación web Express, la base de datos MongoDB y el motor de plantillas EJS. 
+Este proyecto consiste en una aplicación de Node.js con MongoDB. Esta aplicación se basa en un [proyecto guiado](https://www.coursera.org/projects/containerize-full-stack-nodejs-application-in-docker) de Coursera. Básicamente es un blog simple que permite a los usuarios ingresar sus nombres y comentarios. Utiliza el marco de aplicación web Express, la base de datos MongoDB y el motor de plantillas EJS.
 
 # Pre-requisitos
-- Instalar [Node.js](https://nodejs.org/en/) version 18.16.0
+- Instalar [Node.js](https://nodejs.org/en/) versión 18.16.0
 - Instalar Docker:
-  - [Docker](https://docs.docker.com/desktop/install/windows-install/) para Windows, en este caso tambien se instala la herramienta de docker compose
-  - [Docker](https://docs.docker.com/engine/install/ubuntu/) para Ubuntu
-  - [Docker compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04) para Ubuntu
- 
+ - [Docker](https://docs.docker.com/desktop/install/windows-install/) para Windows, en este caso también se instala la herramienta de docker-compose
+ - [Docker](https://docs.docker.com/engine/install/ubuntu/) para Ubuntu
+ - [Docker-compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04) para Ubuntu
 
-# Instalacion
+# Instalación
 
-#### Instalacion local
+#### Instalación local
 
 Si se quiere instalar y ejecutar la aplicación localmente, sin necesidad de despliegue a través de Jenkins, se debe seguir estos pasos:
 
 1. Clonar el repositorio
+
 ````
 git clone https://github.com/JulianMolina99/NodeJSApp.git
 ````
 
-2. Navegar al directorio actual de la aplicacion.
+2. Navegar al directorio actual de la aplicación.
+
 ````
 cd "Install Application"
 ````
@@ -38,24 +39,23 @@ Si se desea desplegar la aplicación mediante Jenkins, se debe utilizar los arch
 ## Estructura del proyecto
 La estructura de carpetas de esta aplicación se explica a continuación:
 
-| Nombre | Descripcion |
+| Nombre | Descripción |
 | ------------------------ | --------------------------------------------------------------------------------------------- |
-| **Install Aplication**   | Contiene los archivos dockerfile y docker-compose para realizar la instalacion de la aplicacion de manera local sin necesidad del despliegue a traves de Jenkins  |
-| **coverage**             | Contiene el informe de cobertura de las pruebas del codigo fuente realizado por Jest.  |
-| **dist**                 | Contiene el distribuible (o salida) de la compilacion del codigo fuente con Parcel.   |
-| **src**                  | Contiene el codigo fuente de la aplicacion                               |
-| **src/\_\_test\_\_**         | Contiene los archivos para realizar pruebas unitarias del codigo fuente.      |                
-| **src/models**           | Los modelos definen esquemas que se utilizarán para almacenar y recuperar datos de la base de datos de la aplicación.  |
-| **src/views**            | Contiene las plantillas de la aplicación que se renderizarán en el cliente, en este caso, la plantilla index.ejs. |
-| **src**/index.js         | Configura y define las rutas de la aplicación Express. También establece la conexión con MongoDB.|
-| **src**/server.js        | Punto de entrada de la aplicación. Inicia el servidor y escucha en el puerto especificado.  |
-| .gitignore               | Especifica los archivos y directorios que Git debe ignorar al realizar un commit.  |
-| Jenkinsfile              | Este Jenkinsfile invoca una funcion de librerias compartidas de Jenkins que realiza el pipeline de CI/CD de la aplicacion. |
-| docker-compose.yml       | Define los servicios, redes y volúmenes de la aplicación para Docker Compose. |
-| dockerfile               | Define los pasos para construir la imagen Docker de la aplicación.   |
-| package-lock.json        | Mantiene un registro exacto de las dependencias y versiones instaladas por npm en el momento de su creación. |   
-| package.json             | Define las dependencias del proyecto, los scripts de construcción y otros metadatos del proyecto. | 
-| test-report.xml          | Contiene el informe de las pruebas unitarias realizadas en el código fuente. |
+| **coverage** | Contiene el informe de cobertura de las pruebas del código fuente realizado por Jest. |
+| **dist** | Contiene el distribuible (o salida) de la compilación del código fuente con Parcel. |
+| **src** | Contiene el código fuente de la aplicación |
+| **src/__test__** | Contiene los archivos para realizar pruebas unitarias del código fuente. |
+| **src/models** | Los modelos definen esquemas que se utilizarán para almacenar y recuperar datos de la base de datos de la aplicación. |
+| **src/views** | Contiene las plantillas de la aplicación que se renderizarán en el cliente, en este caso, la plantilla index.ejs. |
+| **src**/index.js | Configura y define las rutas de la aplicación Express. También establece la conexión con MongoDB.|
+| **src**/server.js | Punto de entrada de la aplicación. Inicia el servidor y escucha en el puerto especificado. |
+| .gitignore | Especifica los archivos y directorios que Git debe ignorar al realizar un commit. |
+| Jenkinsfile | Este Jenkinsfile invoca una función de librerías compartidas de Jenkins que realiza el pipeline de CI/CD de la aplicación. |
+| docker-compose.yml | Define los servicios, redes y volúmenes de la aplicación para Docker Compose. |
+| dockerfile | Define los pasos para construir la imagen Docker de la aplicación. |
+| package-lock.json | Mantiene un registro exacto de las dependencias y versiones instaladas por npm en el momento de su creación. |
+| package.json | Define las dependencias del proyecto, los scripts de construcción y otros metadatos del proyecto. |
+| test-report.xml | Contiene el informe de las pruebas unitarias realizadas en el código fuente.
 
 ### Scripts NPM
 
@@ -64,33 +64,33 @@ Los scripts de npm básicamente nos permiten llamar (y encadenar) comandos de te
 
 | Script de Npm | Descripción |
 | ------------------------- | ------------------------------------------------------------------------------------------------- |
-| `start`                   | Ejecuta el archivo index.js de la carpeta src con Node.js. Se puede invocar con `npm start` |
-| `test`                     | Ejecuta las pruebas unitarias con Jest, genera un informe de cobertura y procesa los resultados de las pruebas con jest-sonar-reporter. Se puede invocar con `npm test` |
-| `build`                   | Construye la aplicación con Parcel, utilizando el archivo index.js de la carpeta src como entrada. Se puede invocar con `npm run build` |
+| `start` | Ejecuta el archivo index.js de la carpeta src con Node.js. Se puede invocar con `npm start` |
+| `test` | Ejecuta las pruebas unitarias con Jest, genera un informe de cobertura y procesa los resultados de las pruebas con jest-sonar-reporter. Se puede invocar con `npm test` |
+| `build` | Construye la aplicación con Parcel, utilizando el archivo index.js de la carpeta src como entrada. Se puede invocar con `npm run build` |
 
 ### Dependencias de desarrollo
 
-Las dependencias de desarrollo son módulos que solo se requieren durante el desarrollo de la aplicación, no cuando la aplicación ya está en producción. Estas son las dependencias de desarrollo de tu proyecto:
+Las dependencias de desarrollo son módulos que solo se requieren durante el desarrollo de la aplicación, no cuando la aplicación ya está en producción. Estas son las dependencias de desarrollo del proyecto:
 
-- **browserify-zlib**: Proporciona una implementación de zlib para su uso con Browserify.
-- **chokidar**: Proporciona una interfaz de programación para observar los cambios en los archivos y directorios.
-- **jest**: Un marco de pruebas unitarias para JavaScript.
-- **jest-junit**: Un informe de JUnit para Jest, útil para integraciones de CI/CD.
-- **jest-sonar-reporter**: Genera informes de pruebas compatibles con SonarQube.
-- **parcel-bundler**: Un empaquetador de aplicaciones web, muy útil para la construcción de proyectos JavaScript modernos.
-- **supertest**: Proporciona una abstracción de alto nivel para probar las API HTTP.
+- **browserify-zlib**: Proporciona una implementación zlib para su uso con Browserify.
+- **chokidar**: Proporciona una interfaz para observar cambios en archivos y directorios.
+- **jest**: Un marco para pruebas unitarias en JavaScript.
+- **jest-junit**: Un informe JUnit para Jest, útil para integraciones CI/CD.
+- **jest-sonar-reporter**: Genera informes compatibles con SonarQube.
+- **parcel-bundler**: Un empaquetador web muy útil para construir proyectos JavaScript modernos.
+- **supertest**: Proporciona una abstracción para probar APIs HTTP.
 
 ## Compilación
 
-La compilación de la aplicación está configurada para hacerse con [Parcel](https://parceljs.org/), un empaquetador de aplicaciones web.
+La compilación está configurada para hacerse con [Parcel](https://parceljs.org/), un empaquetador web rápido.
 
 ```
 "parcel-bundler": "1.3.1"
 ```
 
-### Compilación de la aplicación usando scripts de NPM
+### Compilación usando scripts NPM
 
-La compilacion se realiza con el siguiente comando:
+La compilación se realiza con el siguiente comando:
 
 ```
 npm run build
