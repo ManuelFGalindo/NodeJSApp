@@ -20,7 +20,7 @@ services:
     image: marioapp
     container_name: test_mario
     ports:
-      - "3005:80"
+      - "3005:3005"
     networks:
       - network_nodejs_app
 
