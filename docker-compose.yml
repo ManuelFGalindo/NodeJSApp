@@ -17,10 +17,10 @@ services:
     networks:
       - network_nodejs_app
   web2:
-    image: marioapp
-    container_name: test_mario
+    image: app_laura
+    container_name: test_react
     ports:
-      - "3005:3005"
+      - "3000:3000"
     networks:
       - network_nodejs_app
 
