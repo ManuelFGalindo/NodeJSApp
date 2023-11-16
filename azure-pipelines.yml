@@ -1,0 +1,19 @@
+trigger:
+  branches:
+    include:
+    - develop
+    - master
+
+
+pool:
+  name: <name-pool-agent>
+
+resources:
+  repositories:
+    - repository: <reponame>
+      type: git
+      name: '<project-name>/<repo-name>'
+      ref: refs/heads/main
+      
+extends:
+  template: azure-pipelines.yml@<repo-name>
