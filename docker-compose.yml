@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: ${USER}/${REPO}:${BUILD_ID}
+    image: daz2023/nodejsapp:latest
     container_name: nodejs_app
     ports:
       - "3001:3001"
